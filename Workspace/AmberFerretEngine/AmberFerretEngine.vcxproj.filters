@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="App">
+      <UniqueIdentifier>{39a4dd9c-e805-4048-9c21-8d774ad4ca3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Src\AmberFerretEngine\App\dllmain.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\AmberFerretEngine\App\AmberFerretEngineExport.hpp">
+      <Filter>App</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
