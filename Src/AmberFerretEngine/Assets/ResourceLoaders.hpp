@@ -8,8 +8,7 @@ namespace AmberStudio
 		{
 		public:
 			virtual std::string GetExtensionFormat();
-			virtual ResHandle LoadResource(const std::istream& data);
-			virtual bool UseRawData();
+			virtual std::shared_ptr<IResourceExtraData> LoadResource(const std::istream& data);
 		};
 	}
 }

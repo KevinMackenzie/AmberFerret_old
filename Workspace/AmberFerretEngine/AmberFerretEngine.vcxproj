@@ -20,13 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\AmberFerretEngine\App\dllmain.cpp" />
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\InputStream.cpp" />
     <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\Resource.cpp" />
     <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.cpp" />
     <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\AmberFerretEngine\App\AmberFerretEngineExport.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\InputStream.hpp" />
     <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\Resource.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceExtraDatas.hpp" />
     <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.hpp" />
     <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceManager.hpp" />
     <ClInclude Include="..\..\Src\AmberFerretEngine\Exports.hpp" />

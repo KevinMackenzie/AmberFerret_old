@@ -33,6 +33,9 @@
     <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.cpp">
       <Filter>Assets</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\InputStream.cpp">
+      <Filter>Assets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\AmberFerretEngine\App\AmberFerretEngineExport.hpp">
@@ -52,5 +55,11 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Platforms\Platform.hpp" />
     <ClInclude Include="..\..\Src\Platforms\Windows.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceExtraDatas.hpp">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\InputStream.hpp">
+      <Filter>Assets</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -13,14 +13,13 @@ namespace AmberStudio
 	{
 	public:
 		virtual std::string GetExtensionFormat() = 0;
-		virtual ResHandle LoadResource(const std::istream& data) = 0;
-		virtual bool UseRawData() = 0;
+		virtual std::shared_ptr<IResourceExtraData> LoadResource(const std::istream& data) = 0;
 	};
 
 	class IResourceExtraData
 	{
 	public:
-		virtual void GetSize() = 0;
+		virtual long GetSize() = 0;
 	};
 	
 }
