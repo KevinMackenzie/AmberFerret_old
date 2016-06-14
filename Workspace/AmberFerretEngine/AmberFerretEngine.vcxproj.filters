@@ -4,15 +4,53 @@
     <Filter Include="App">
       <UniqueIdentifier>{39a4dd9c-e805-4048-9c21-8d774ad4ca3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{679423df-710e-48a7-9e00-18ff66815209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{f5c9b13d-9986-4280-a3da-934ca8610803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{5fdd070e-1df1-474f-8051-42a92d6a94ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{7c733834-e4b0-4ffb-9330-bca627117640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{1fc7dc0d-007e-4af7-baa4-2cb37fccc871}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\AmberFerretEngine\App\dllmain.cpp">
       <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceManager.cpp">
+      <Filter>Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\Resource.cpp">
+      <Filter>Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.cpp">
+      <Filter>Assets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\AmberFerretEngine\App\AmberFerretEngineExport.hpp">
       <Filter>App</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceManager.hpp">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\Resource.hpp">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Interfaces.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Stdafx.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Exports.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.hpp">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Platforms\Platform.hpp" />
+    <ClInclude Include="..\..\Src\Platforms\Windows.hpp" />
   </ItemGroup>
 </Project>

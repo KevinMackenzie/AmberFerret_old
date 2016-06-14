@@ -1,7 +1,7 @@
 #pragma once
 
 
-#ifdef WIN32
+#ifdef PLATFORM_WINDOWS
 #include "Windows.hpp"
 #else
 

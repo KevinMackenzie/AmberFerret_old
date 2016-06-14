@@ -20,9 +20,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\AmberFerretEngine\App\dllmain.cpp" />
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\Resource.cpp" />
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.cpp" />
+    <ClCompile Include="..\..\Src\AmberFerretEngine\Assets\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\AmberFerretEngine\App\AmberFerretEngineExport.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\Resource.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceLoaders.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Assets\ResourceManager.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Exports.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Interfaces.hpp" />
+    <ClInclude Include="..\..\Src\AmberFerretEngine\Stdafx.hpp" />
+    <ClInclude Include="..\..\Src\Platforms\Platform.hpp" />
+    <ClInclude Include="..\..\Src\Platforms\Windows.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6F148E2E-C81E-4A1C-93F2-093D1F173C63}</ProjectGuid>
@@ -108,7 +119,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions);PLATFORM_WINDOWS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <EnablePREfast>true</EnablePREfast>
       <PrecompiledHeaderFile>
@@ -129,7 +140,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions);PLATFORM_WINDOWS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <EnablePREfast>true</EnablePREfast>
       <PrecompiledHeaderFile>
@@ -152,7 +163,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions);PLATFORM_WINDOWS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <EnablePREfast>true</EnablePREfast>
       <PrecompiledHeaderFile>
@@ -177,7 +188,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;AMBERFERRETENGINE_EXPORTS;%(PreprocessorDefinitions);PLATFORM_WINDOWS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <EnablePREfast>true</EnablePREfast>
       <PrecompiledHeaderFile>
