@@ -14,7 +14,7 @@ namespace AmberStudio
 {
 	using std::shared_ptr;
 
-	//using ResHandle = shared_ptr<Assets::Resource>;
+	using ResHandle = shared_ptr<Assets::Resource>;
 }
 
 #include "Interfaces.hpp"
