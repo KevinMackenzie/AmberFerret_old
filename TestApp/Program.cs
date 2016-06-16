@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EventManagement;
+using Newtonsoft.Json;
 using ResourceManagement;
 using ResourceManagement.Interfaces;
 using System;
@@ -36,6 +37,8 @@ namespace TestApp
 
         public static void TestFolderResourceManager()
         {
+            Console.WriteLine("========Starting FolderResourceManager Test!========");
+
             FolderResourceManager resManager = new FolderResourceManager();
 
             JsonResourceLoader<TestStruct> testLoader = new JsonResourceLoader<TestStruct>(".test.json");
@@ -54,6 +57,8 @@ namespace TestApp
             {
                 Console.WriteLine("Test Failed");
             }
+
+            Console.WriteLine("========FolderResourceManager Test Complete!========");
         }
 
         public static void SaveTestFolderResourceCache()
@@ -67,6 +72,18 @@ namespace TestApp
             writer.Flush();
         }
 
+        public static void TestSTEventManager()
+        {
+            Console.WriteLine("========Starting STEventManager Test!========");
+            STEventManager evtManager = new STEventManager();
+            evtManager.RegisterEventHandler(new STEventManagerTest.TestEventHandler());
+            for(int i = 0;i < 50; ++i)
+            {
+                evtManager.QueueEvent(new Event("TestApp.TestEvent", new STEventManagerTest.TestEventData(), Event.EventPriority.High));
+            }
+            evtManager.ProcessQueue(TimeSpan.MaxValue);
+            Console.WriteLine("========STEventManager Test Complete!========");
+        }
 
         protected static JsonSerializerSettings SerializerSettings = new JsonSerializerSettings()
         {
@@ -75,8 +92,9 @@ namespace TestApp
 
         public static void Main(string[] args)
         {
-            //SaveTestFolderResourceCache();
             TestFolderResourceManager();
+            TestSTEventManager();
+            Console.Read();
         }
     }
 }
