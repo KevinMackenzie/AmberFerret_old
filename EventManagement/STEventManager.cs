@@ -42,6 +42,7 @@ namespace EventManagement
                         break;
                     }
                 }
+                now = DateTime.UtcNow;
             }
         }
 
