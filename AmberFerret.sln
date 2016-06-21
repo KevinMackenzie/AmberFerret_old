@@ -26,6 +26,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GLUT.NET", "GLUT.NET\GLUT.N
 		{52FA5AEF-39A4-49D5-AB12-FA5C38961FBF} = {52FA5AEF-39A4-49D5-AB12-FA5C38961FBF}
 	EndProjectSection
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpFont", "SharpFont\SharpFont.xproj", "{0D496B11-10AC-4F6D-8B14-0539F9B9EEF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{4593700D-E9D8-406D-B02B-B93CF317A99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4593700D-E9D8-406D-B02B-B93CF317A99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4593700D-E9D8-406D-B02B-B93CF317A99C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D496B11-10AC-4F6D-8B14-0539F9B9EEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D496B11-10AC-4F6D-8B14-0539F9B9EEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D496B11-10AC-4F6D-8B14-0539F9B9EEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D496B11-10AC-4F6D-8B14-0539F9B9EEF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
