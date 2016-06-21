@@ -3,7 +3,9 @@
 
   "dependencies": {
     "NETStandard.Library": "1.5.0-rc2-24027",
-    "Pencil.Gaming": "1.0.0-*"
+    "Pencil.Gaming": "1.0.0-*",
+    "SharpFont": "1.0.0-*",
+    "System.Diagnostics.Debug": "4.0.11-rc2-24027"
   },
 
   "frameworks": {
