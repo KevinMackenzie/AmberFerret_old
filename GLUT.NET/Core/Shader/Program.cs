@@ -34,7 +34,7 @@ namespace GLUT.NET.Core.Shader
 
         public int ProgramId { get; private set; } = 0;
         public bool IsSeparable { get; private set; } = false;
-        public int Stages { get; private set; } = 0;
+        public ProgramStageMask Stages { get; private set; } = 0;
 
         public Dictionary<string, ProgramAttributeInfo> AttributeLocations { get; private set; } = new Dictionary<string, ProgramAttributeInfo>();
         public Dictionary<string, ProgramUniformInfo> UniformLocations { get; private set; } = new Dictionary<string, ProgramUniformInfo>();
@@ -91,7 +91,7 @@ namespace GLUT.NET.Core.Shader
                 //create a list of stages
                 foreach (var shader in shaders)
                 {
-                    ret.Stages |= (int)shader.Key;
+                    ret.Stages = (ProgramStageMask)((int)ret.Stages | (int)shader.Key);
                 }
             }
 
