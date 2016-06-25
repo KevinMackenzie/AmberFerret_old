@@ -13,9 +13,11 @@ namespace GLUT.NET.Core
 
         public int VersionMajor { get; private set; } = 0;
         public int VersionMinor { get; private set; } = 0;
+        public int Version { get; private set; } = 0;
 
         public int GLSLVersionMajor { get; private set; } = 0;
         public int GLSLVersionMinor { get; private set; } = 0;
+        public int GLSLVersion { get; private set; } = 0;
 
         public string[] Extensions { get; private set; } = null;
         
@@ -38,6 +40,7 @@ namespace GLUT.NET.Core
             {
                 VersionMajor = int.Parse(versionStringMajor);
                 VersionMinor = int.Parse(versionStringMinor);
+                Version = VersionMajor * 10 + VersionMinor;
             }
             catch
             {
@@ -58,6 +61,7 @@ namespace GLUT.NET.Core
             {
                 GLSLVersionMajor = int.Parse(versionStringMajor);
                 GLSLVersionMinor = int.Parse(versionStringMinor);
+                GLSLVersion = GLSLVersionMajor * 10 + GLSLVersionMinor;
             }
             catch
             {
