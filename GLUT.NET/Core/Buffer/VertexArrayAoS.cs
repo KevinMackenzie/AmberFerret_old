@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace GLUT.NET.Core.Buffer
 {
+    public interface IVertexData
+    {
+        /// <summary>
+        /// Vertex Data has a size per vertex including all attributes
+        /// </summary>
+        /// <returns>the sum of the size of all attributes</returns>
+        int Size();
+    }
+
+
     public class VertexArrayAoS : VertexArrayBase
     {
         #region Properties
@@ -33,6 +43,30 @@ namespace GLUT.NET.Core.Buffer
                 throw new BufferCreateException();
 
             return instance;
+        }
+
+        #endregion
+
+        #region OpenGL
+
+        public void BufferData<T>(T[] data) where T : struct,IVertexData
+        {
+            //logical first step
+            if (data.Length == 0)
+                return;
+
+            int vertexSize = GetVertexSize();
+
+            if(data[0].Size() != vertexSize)
+            {
+                throw new ArgumentException("(VertexArrayAoS.BufferData): data vertex size is not compatible");
+            }
+
+            BindVertexArray();
+            GL.BindBuffer(BufferTarget.ArrayBuffer, DataBufferId);
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)(data.Length * vertexSize), data, UsageMode);
+
+            VertexCount = data.Length;
         }
 
         #endregion
