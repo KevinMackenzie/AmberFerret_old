@@ -11,9 +11,21 @@ namespace GLUT.NET
         {}
     }
 
+    public class VertexArrayCreateException : Exception
+    {
+        public VertexArrayCreateException() : base("Failed to Create Vertex Array")
+        { }
+    }
+
     public class BufferNullException : Exception
     {
         public BufferNullException() : base("Attempt to Bind Null Buffer")
+        { }
+    }
+
+    public class BufferCreateException : Exception
+    {
+        public BufferCreateException() : base("Failed to Create OpenGL Buffer")
         { }
     }
 

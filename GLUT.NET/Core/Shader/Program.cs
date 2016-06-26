@@ -50,7 +50,7 @@ namespace GLUT.NET.Core.Shader
 
         #region OpenGL Stuff
 
-        public static Program CreateProgram(Dictionary<ShaderType, Shader> shaders, bool separable, out ProgramLinkLog log)
+        public static Program CreateInstance(Dictionary<ShaderType, Shader> shaders, bool separable, out ProgramLinkLog log)
         {
             Program ret = new Program();
             ret.ProgramId = (int)GL.CreateProgram();

@@ -11,7 +11,7 @@ namespace GLUT.NET.Core.Buffer
         public ushort BytesPerElement;//int would be 4
         public ushort ElementsPerValue;//vec4 would be 4
         public int VertexAttribLocation;
-        public DataType Type;//float would be DataType.Float
+        public VertexAttribPointerType Type;//float would be DataType.Float
         public uint Offset;//will be 0 in SoA
     }
 
@@ -40,7 +40,7 @@ namespace GLUT.NET.Core.Buffer
         }
 
         //this is non-static here, but will be static in children
-        protected void CreateBase(Dictionary<int, VertexAttribInfo> attribInfos, BeginMode primativeType, BufferUsageHint usageMode, bool isIndexed)
+        protected void PrepInstance(Dictionary<int, VertexAttribInfo> attribInfos, BeginMode primativeType, BufferUsageHint usageMode, bool isIndexed)
         {
             VertexAttribInfos = attribInfos;
             PrimativeType = primativeType;
@@ -50,10 +50,14 @@ namespace GLUT.NET.Core.Buffer
             if (ContextInfo.Instance.Version >= 30)
             {
                 VertexArrayId = GL.GenVertexArray();
+                if (0 == VertexArrayId)
+                    throw new VertexArrayCreateException();
             }
             if (Indexed)
             {
                 IndexBufferId = GL.GenBuffer();
+                if (0 == IndexBufferId)
+                    throw new BufferCreateException();
             }
 
         }
@@ -148,13 +152,7 @@ namespace GLUT.NET.Core.Buffer
             }
         }
 
-        protected void EnableVertexAttributes()
-        {
-            foreach(var info in VertexAttribInfos)
-            {
-                GL.EnableVertexAttribArray(info.Key);
-            }
-        }
+        protected abstract void EnableVertexAttributes();
 
         protected void DisableVertexAttributes()
         {
@@ -193,14 +191,14 @@ namespace GLUT.NET.Core.Buffer
                 {
                     try
                     {
-                        GL.DeleteBuffer(IndexBufferId);
-
-                        if (ContextInfo.Instance.Version >= 30)
-                        {
-                            GL.DeleteVertexArray(VertexArrayId);
-                        }
                     }
                     catch { }
+                }
+                GL.DeleteBuffer(IndexBufferId);
+
+                if (ContextInfo.Instance.Version >= 30)
+                {
+                    GL.DeleteVertexArray(VertexArrayId);
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.

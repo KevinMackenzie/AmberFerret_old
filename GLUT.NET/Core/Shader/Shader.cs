@@ -27,7 +27,7 @@ namespace GLUT.NET.Core.Shader
         {
         }
 
-        public static Shader CreateShader(string text, ShaderType type, out ShaderCompileLog log)
+        public static Shader CreateInstance(string text, ShaderType type, out ShaderCompileLog log)
         {
             Shader ret = new Shader();
             ret.Type = type;
