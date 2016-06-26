@@ -42,7 +42,7 @@ namespace GLUT.NET.Gui
         private float _size;
 
         private int TexId;
-        CharacterAtlas CharAtlas;
+        CharacterAtlas CharAtlas = new CharacterAtlas();
         private uint CharacterOffset = 32;
         private uint CharacterEnd = 0xFFF;
         private List<uint> TextureLineBreakIndices = new List<uint>();
