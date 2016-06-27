@@ -9,8 +9,6 @@ namespace GLUT.NET.Core
 {
     public class ContextInfo
     {
-        public static ContextInfo Instance { get; set; } = new ContextInfo();
-
         public int VersionMajor { get; private set; } = 0;
         public int VersionMinor { get; private set; } = 0;
         public int Version { get; private set; } = 0;

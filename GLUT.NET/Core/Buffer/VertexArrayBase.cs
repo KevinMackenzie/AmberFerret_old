@@ -15,7 +15,7 @@ namespace GLUT.NET.Core.Buffer
         public uint Offset;//will be 0 in SoA
     }
 
-    public abstract class VertexArrayBase
+    public abstract class VertexArrayBase : ContextDependent
     {
         #region Properties
         
@@ -35,7 +35,7 @@ namespace GLUT.NET.Core.Buffer
 
         #region Construction
 
-        protected VertexArrayBase()
+        protected VertexArrayBase(ContextInfo info) : base(info)
         {
         }
 
@@ -47,7 +47,7 @@ namespace GLUT.NET.Core.Buffer
             UsageMode = usageMode;
             Indexed = isIndexed;
 
-            if (ContextInfo.Instance.Version >= 30)
+            if (CtxtInfo.Version >= 30)
             {
                 VertexArrayId = GL.GenVertexArray();
                 if (0 == VertexArrayId)
@@ -77,7 +77,7 @@ namespace GLUT.NET.Core.Buffer
         {
             BindVertexArray();
 
-            if(ContextInfo.Instance.Version < 30)
+            if(CtxtInfo.Version < 30)
             {
                 EnableVertexAttributes();
             }
@@ -93,7 +93,7 @@ namespace GLUT.NET.Core.Buffer
                 GL.DrawArrays(PrimativeType, 0, VertexCount);
             }
 
-            if(ContextInfo.Instance.Version < 30)
+            if(CtxtInfo.Version < 30)
             {
                 DisableVertexAttributes();
             }
@@ -103,7 +103,7 @@ namespace GLUT.NET.Core.Buffer
         {
             BindVertexArray();
 
-            if(ContextInfo.Instance.Version < 30)
+            if(CtxtInfo.Version < 30)
             {
                 EnableVertexAttributes();
             }
@@ -119,7 +119,7 @@ namespace GLUT.NET.Core.Buffer
                 GL.DrawArrays(PrimativeType, (int)start, (int)count);
             }
 
-            if (ContextInfo.Instance.Version < 30)
+            if (CtxtInfo.Version < 30)
             {
                 DisableVertexAttributes();
             }
@@ -130,7 +130,7 @@ namespace GLUT.NET.Core.Buffer
 
             BindVertexArray();
 
-            if (ContextInfo.Instance.Version < 30)
+            if (CtxtInfo.Version < 30)
             {
                 EnableVertexAttributes();
             }
@@ -146,7 +146,7 @@ namespace GLUT.NET.Core.Buffer
                 GL.DrawArraysInstanced(PrimativeType, 0, VertexCount, (int)instances);
             }
 
-            if (ContextInfo.Instance.Version < 30)
+            if (CtxtInfo.Version < 30)
             {
                 DisableVertexAttributes();
             }
@@ -196,7 +196,7 @@ namespace GLUT.NET.Core.Buffer
                 }
                 GL.DeleteBuffer(IndexBufferId);
 
-                if (ContextInfo.Instance.Version >= 30)
+                if (CtxtInfo.Version >= 30)
                 {
                     GL.DeleteVertexArray(VertexArrayId);
                 }

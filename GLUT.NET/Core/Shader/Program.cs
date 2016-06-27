@@ -27,7 +27,7 @@ namespace GLUT.NET.Core.Shader
     }
 
 
-    public class Program
+    public class Program : ContextDependent
     {
 
         #region Properties
@@ -43,16 +43,20 @@ namespace GLUT.NET.Core.Shader
 
         #region Constructor
 
-        private Program()
+        private Program(ContextInfo info) : base(info)
         { }
 
         #endregion
 
         #region OpenGL Stuff
 
-        public static Program CreateInstance(Dictionary<ShaderType, Shader> shaders, bool separable, out ProgramLinkLog log)
+        public static Program CreateInstance(ContextInfo ctxtInfo, Dictionary<ShaderType, Shader> shaders, bool separable, out ProgramLinkLog log)
         {
-            Program ret = new Program();
+            if (shaders.Count == 0)
+                throw new ArgumentException("Dictionary of Shaders is Empty");
+
+            //the context info is based on the context info of the shaders
+            Program ret = new Program(shaders.Values.First().CtxtInfo);
             ret.ProgramId = (int)GL.CreateProgram();
 
             log = new ProgramLinkLog();

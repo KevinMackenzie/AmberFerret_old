@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GLUT.NET.Core.Shader
 {
-    public class ProgrammablePipelineObject
+    public class ProgrammablePipelineObject : ContextDependent
     {
         #region Properties
 
@@ -20,9 +20,15 @@ namespace GLUT.NET.Core.Shader
 
         #region OpenGL Stuff
 
-        public static ProgrammablePipelineObject CreatePPO(List<Program> programs)
+        private ProgrammablePipelineObject(ContextInfo ctxtInfo) : base(ctxtInfo)
+        { }
+
+        public static ProgrammablePipelineObject CreateInstance(List<Program> programs)
         {
-            ProgrammablePipelineObject ret = new ProgrammablePipelineObject();
+            if (programs.Count == 0)
+                throw new ArgumentException("Blank List Of Programs");
+
+            ProgrammablePipelineObject ret = new ProgrammablePipelineObject(programs[0].CtxtInfo);
             ret.PPOId = GL.GenProgramPipeline();
 
             if(ret.PPOId == 0)

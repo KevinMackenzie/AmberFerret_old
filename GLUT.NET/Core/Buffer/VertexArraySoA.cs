@@ -19,12 +19,12 @@ namespace GLUT.NET.Core.Buffer
 
         #region Construction
 
-        private VertexArraySoA()
+        private VertexArraySoA(ContextInfo info) : base(info)
         { }
 
-        public static VertexArraySoA CreateInstance(Dictionary<int, VertexAttribInfo> attribInfos, BeginMode primativeType, BufferUsageHint usageMode, bool isIndexed)
+        public static VertexArraySoA CreateInstance(ContextInfo ctxtInfo, Dictionary<int, VertexAttribInfo> attribInfos, BeginMode primativeType, BufferUsageHint usageMode, bool isIndexed)
         {
-            VertexArraySoA instance = new VertexArraySoA();
+            VertexArraySoA instance = new VertexArraySoA(ctxtInfo);
             instance.PrepInstance(attribInfos, primativeType, usageMode, isIndexed);
 
             //gen the buffers
@@ -80,7 +80,7 @@ namespace GLUT.NET.Core.Buffer
 
         protected override void RefreshDataBufferAttribute()
         {
-            if (ContextInfo.Instance.Version >= 30)
+            if (CtxtInfo.Version >= 30)
             {
                 BindVertexArray();
                 foreach (var info in VertexAttribInfos)

@@ -12,7 +12,7 @@ namespace GLUT.NET.Core.Shader
         public bool Result;
     }
 
-    public class Shader
+    public class Shader : ContextDependent
     {
         #region Properties
 
@@ -23,13 +23,13 @@ namespace GLUT.NET.Core.Shader
 
         #region Constructor
 
-        private Shader()
+        private Shader(ContextInfo info) : base(info)
         {
         }
 
-        public static Shader CreateInstance(string text, ShaderType type, out ShaderCompileLog log)
+        public static Shader CreateInstance(ContextInfo ctxtInfo, string text, ShaderType type, out ShaderCompileLog log)
         {
-            Shader ret = new Shader();
+            Shader ret = new Shader(ctxtInfo);
             ret.Type = type;
 
             GL.CreateShader(ret.Type);
