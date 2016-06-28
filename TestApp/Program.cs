@@ -84,13 +84,13 @@ namespace TestApp
             evtManager.ProcessQueue(TimeSpan.MaxValue);
             Console.WriteLine("========STEventManager Test Complete!========");
         }
-
+       
         protected static JsonSerializerSettings SerializerSettings = new JsonSerializerSettings()
         {
             TypeNameHandling = TypeNameHandling.All
         };
 
-        public static void Main(string[] args)
+        public static void Main(string[] args)  
         {
             TestFolderResourceManager();
             TestSTEventManager();
