@@ -10,6 +10,7 @@
       "type": "platform",
       "version": "1.0.0-rc2-3002702"
     },
+    "MVCCore": "1.0.0-*",
     "Newtonsoft.Json": "8.0.3",
 "ResourceManagement": "1.0.0-*",
 "System.Runtime.Serialization.Primitives": "4.0.10-*"

@@ -11,6 +11,9 @@ namespace MVCCore
     {
         public interface IModelManager
         {
+            IModel GetModel(string path);
+            bool LoadModel(StreamReader stream, string serializerKey);
+            void RegisterSerializer(IModelSerializer serializer, string key);
         }
 
         public interface IModel
@@ -35,12 +38,6 @@ namespace MVCCore
             void Render(TimeSpan deltaTime, int viewIndex);
             //returns the index of the added view
             int AddView(IView view);
-        }
-
-        public interface IController
-        {
-            void QueueEvent(Event evt);
-            void ProcessEventQueue(TimeSpan maxTime);
         }
 
         public interface ISceneGraphNode
