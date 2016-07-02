@@ -36,6 +36,20 @@ namespace ResourceManagement
             return null;
         }
 
+        public void LoadResource(ref Resource resource)
+        {
+            if (null == resource)
+                return;
+
+            if (null == resource.ResourcePath)
+                return;
+
+            Resource tmp = GetResource(resource.ResourcePath);
+            if (null == tmp)
+                return;
+            resource = tmp;
+        }
+
         public abstract void LoadResourceCache(string location);
         //this should be overriden to retrieve a StreamReader
         protected abstract StreamReader GetReader(string path);

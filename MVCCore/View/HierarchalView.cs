@@ -1,4 +1,6 @@
 ﻿using MVCCore.Interfaces;
+using MVCCore.Model;
+using MVCCore.View.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +10,20 @@ namespace MVCCore.View
 {
     public class HierarchalView : IView
     {
-        public SceneGraphNode SceneGraph = new SceneGraphNode();
+        public SceneGraph Scene { get; private set; } = new SceneGraph();
 
         public void RenderFrame(TimeSpan deltaTime)
         {
-            throw new NotImplementedException();
+            Scene.Render(deltaTime);
         }
 
         public void UpdateFromModel(IModel model)
         {
-            throw new NotImplementedException();
+            if (!(model is GameModel))
+                return;//throw something?
+
+            GameModel gModel = model as GameModel;
+            Scene.UpdateFromModel(gModel);
         }
     }
 }

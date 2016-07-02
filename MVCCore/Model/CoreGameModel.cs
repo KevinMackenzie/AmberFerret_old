@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MVCCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MVCCore.Model
 {
-    public class GameWorldGraph
+    public class CoreGameModel : IModel
     {
-        public GameWorldGraphNode RootNode = new GameWorldGraphNode();
+
     }
 }

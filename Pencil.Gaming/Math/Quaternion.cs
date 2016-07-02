@@ -516,5 +516,19 @@ namespace Pencil.Gaming.MathUtils {
 			//be converted to ie a one or a zero in the last position 
 			return new Quaternion(vector, 0.0f);
 		}
+
+        /// <summary>
+        /// Creates a normalized Vector3 with the direction the rotated object will be facing
+        /// </summary>
+        /// <returns>A normalized vector of the direction this object is looking</returns>
+        public Vector3 LookAt()
+        {
+            //rotate the "forward" axis (negative Z)
+            Vector4 ret = new Vector4(0, 0, -1, 0);
+
+            ret = Matrix.Mult(ret, Matrix.CreateFromQuaternion(this));
+
+            return ret.Xyz;
+        }
 	}
 }

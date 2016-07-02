@@ -1,4 +1,5 @@
-﻿using ResourceManagement.Interfaces;
+﻿using Newtonsoft.Json;
+using ResourceManagement.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace ResourceManagement
 {
     public class Resource
     {
+        [JsonIgnore]
         public IResourceExtraData ExtraData { get; private set; }
         public string ResourcePath { get; private set; }
 
@@ -15,6 +17,19 @@ namespace ResourceManagement
         {
             ExtraData = extraData;
             ResourcePath = resourcePath;
+        }
+
+        public bool IsExtraDataType<T>() where T : IResourceExtraData
+        {
+            //this could be more graceful (better null checks maybe?)
+            try
+            {
+                return ExtraData.GetType() is T;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

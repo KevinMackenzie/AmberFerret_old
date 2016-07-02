@@ -12,7 +12,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestApp", "TestApp\TestApp.
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EventManagement", "EventManagement\EventManagement.xproj", "{E083CDB7-F6F1-44B9-8367-764C567FE970}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MVCCore", "MVCCore\MVCCore.xproj", "{016E0D7F-12AC-4890-9F91-CC7CD6F5A0C6}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GameCore", "MVCCore\GameCore.xproj", "{016E0D7F-12AC-4890-9F91-CC7CD6F5A0C6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E083CDB7-F6F1-44B9-8367-764C567FE970} = {E083CDB7-F6F1-44B9-8367-764C567FE970}
 	EndProjectSection
